@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .common-title {
+            text-align: center;
+            margin: 20px 0; /* 上下间距为20px，左右间距为0 */
+            font-size: 36px; /* 增大字号 */
+            font-weight: bold; /* 加粗文本 */
+        }
+        .dual-carousel-container {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 48%; /* Each carousel takes up 48% of the container width */
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .video-item {
+            min-width: 100%; /* Each video item takes the full width of its container */
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+            .video-item video {
+                width: 100%; /* Ensures the video takes the full width of its container */
+                height: auto;
+            }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+            .carousel-button.left {
+                left: 10px;
+            }
+
+            .carousel-button.right {
+                right: 10px;
+            }
+    </style>
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="DESCRIPTION META TAG">
+    <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+    <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+    <meta property="og:url" content="URL OF THE WEBSITE" />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/image/your_banner_image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+
+    <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+    <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Academic Project Page</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">Lighting-Robust Behavioral Cloning via Bayesian Visual Encoding for Robot Manipulation</h1>
+                        <div class="is-size-5 publication-authors">
+                            <!-- Paper authors -->
+                            <span class="author-block">
+                                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Zhen-yuan Dong</a>,<sup>1，2</sup>，
+                            </span>
+                            <span class="author-block">
+                                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Dong-xu Han</a>,<sup>1，2</sup>，
+                            </span>
+                            <span class="author-block">
+                                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhi-yi Yan</a><sup>1，2</sup>，
+                            </span>
+                            <span class="author-block">
+                                <a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Qian Lin</a><sup>1，2</sup>，
+                            </span>
+                            <span class="author-block">
+                                <a href="FIFTH AUTHOR PERSONAL LINK" target="_blank">Zhi Wang</a><sup>1</sup>，
+                            </span>
+                            <span class="author-block">
+                                <a href="SIXTH AUTHOR PERSONAL LINK" target="_blank">Peng Zhang</a><sup>1，*</sup>,
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Chinese Academy of Sciences<sup>1</sup><br>University of Chinese Academy of Sciences<sup>2</sup></span>
+                            <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- Arxiv PDF link -->
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                                       class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+
+                                <!-- Supplementary PDF link -->
+                                <span class="link-block">
+                                    <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                                       class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Supplementary</span>
+                                    </a>
+                                </span>
+
+                                <!-- Github link -->
+                                <span class="link-block">
+                                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                                       class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+
+                                <!-- ArXiv abstract Link -->
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                                       class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Behavioral Cloning (BC) has shown strong performance in robot manipulation tasks by leveraging the capacity of deep neural networks. However, its reliability degrades in real-world environments with varying lighting conditions, where vision-based policies are prone to overfitting and sensor noise. In this letter, we propose a lighting-robust BC framework by integrating Bayesian Deep Learning (BDL) into the visual encoder. Our method employs variational inference to train the visual backbone using the evidence lower bound (ELBO), combining a standard BC loss with a KL-based regularization term that encourages better generalization and uncertainty estimation. A one-sample Monte Carlo approximation is used for computational efficiency. We evaluate our approach on four simulated Robomimic tasks, where it consistently outperforms standard BC baselines. While the simulated environments do not include lighting variation, our method achieves improved sample efficiency, as evidenced by higher success rates and shorter rollout lengths. In real-world experiments conducted under seven distinct lighting conditions - ranging from dim to high-intensity illumination - our method demonstrates significantly enhanced robustness, maintaining strong performance across all conditions. Code and additional results are available at \url{https://github.com/dzy666fly/BBRBC}.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End paper abstract -->
+
+    <h2 class="common-title">Results</h2>
+
+    <!-- Image carousel -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item">
+                        <!-- Your image here -->
+                        <h2 class="subtitle has-text-centered">
+                            First image description.
+                        </h2>
+                        <img src="static/images/table1.png" alt="MY ALT TEXT" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End image carousel -->
+
+
+
+
+
+
+
+
+    <div class="dual-carousel-container">
+        <!-- First Carousel -->
+        <div class="carousel-container">
+            <button class="carousel-button left" onclick="moveSlide(-1, 0)">&#10094;</button>
+            <div class="carousel-slide" id="carouselSlide1">
+                <div class="video-item">
+                    <video controls muted loop height="auto" width="100%">
+                        <source src="static/videos/br_pb_demo_49_v5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Video 1</p>
+                </div>
+                <div class="video-item">
+                    <video controls muted loop height="auto" width="100%">
+                        <source src="static/videos/br_pb_demo_49_v5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Video 2</p>
+                </div>
+                <div class="video-item">
+                    <video controls muted loop height="auto" width="100%">
+                        <source src="static/videos/br_pb_demo_49_v5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Video 3</p>
+                </div>
+            </div>
+            <button class="carousel-button right" onclick="moveSlide(1, 0)">&#10095;</button>
+        </div>
+
+        <!-- Second Carousel -->
+        <div class="carousel-container">
+            <button class="carousel-button left" onclick="moveSlide(-1, 1)">&#10094;</button>
+            <div class="carousel-slide" id="carouselSlide2">
+                <div class="video-item">
+                    <video controls muted loop height="auto" width="100%">
+                        <source src="static/videos/br_pb_demo_49_v5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Video 4</p>
+                </div>
+                <div class="video-item">
+                    <video controls muted loop height="auto" width="100%">
+                        <source src="static/videos/br_pb_demo_49_v5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Video 5</p>
+                </div>
+                <div class="video-item">
+                    <video controls muted loop height="auto" width="100%">
+                        <source src="static/videos/br_pb_demo_49_v5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Video 6</p>
+                </div>
+            </div>
+            <button class="carousel-button right" onclick="moveSlide(1, 1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        function moveSlide(direction, carouselIndex) {
+            const carouselSlide = document.getElementById(`carouselSlide${carouselIndex + 1}`);
+            const slides = carouselSlide.querySelectorAll('.video-item');
+            const totalSlides = slides.length;
+            const slideWidth = slides[0].offsetWidth;
+
+            let currentIndex = parseInt(carouselSlide.dataset.currentIndex || '0');
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - 1; // Loop to the last slide
+            } else if (currentIndex >= totalSlides) {
+                currentIndex = 0; // Loop to the first slide
+            }
+
+            carouselSlide.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+            carouselSlide.dataset.currentIndex = currentIndex;
+        }
+    </script>
+
+
+
+
+
+    <!-- Youtube video -->
+    <section class="hero is-small is-light">
+        <div class="hero-body">
+            <div class="container">
+                <!-- Paper video. -->
+                <h2 class="title is-3">Video Presentation</h2>
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+
+                        <div class="publication-video">
+                            <!-- Youtube embed code here -->
+                            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End youtube video -->
+    <!-- Video carousel -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-3">Another Carousel</h2>
+                <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item item-video1">
+                        <video poster="" id="video1" autoplay controls muted loop height="100%">
+                            <!-- Your video file here -->
+                            <source src="static/videos/br_pb_demo_49_v5.mp4"
+                                    type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-video2">
+                        <video poster="" id="video2" autoplay controls muted loop height="100%">
+                            <!-- Your video file here -->
+                            <source src="static/videos/br_pb_demo_49_v5.mp4"
+                                    type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-video3">
+                        <video poster="" id="video3" autoplay controls muted loop height="100%">
+                            \
+                            <!-- Your video file here -->
+                            <source src="static/videos/br_pb_demo_49_v5.mp4"
+                                    type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End video carousel -->
+    <!-- Paper poster -->
+    <section class="hero is-small is-light">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title">Poster</h2>
+
+                <iframe src="static/pdfs/sample.pdf" width="100%" height="550">
+                </iframe>
+
+            </div>
+        </div>
+    </section>
+    <!--End paper poster -->
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>BibTex Code Here hhhhhhhh</code></pre>
+        </div>
+    </section>
+    <!--End BibTex citation -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+
+                        <p>
+                            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                                Creative
+                                Commons Attribution-ShareAlike 4.0 International License
+                            </a>.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Statcounter tracking code -->
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+    <!-- End of Statcounter Code -->
+
+</body>
+  </html>
